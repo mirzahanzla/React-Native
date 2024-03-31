@@ -9,7 +9,7 @@ export default function SearchScreen() {
   const fetchWeatherData = async () => {
     try {
       const response = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=fe784859e073eb54a6ea021a10765594`
+        `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid={Api.key_In_Yours}`
       );
       const data = await response.json();
       setWeatherData(data);
