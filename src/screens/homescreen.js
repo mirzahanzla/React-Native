@@ -46,7 +46,7 @@ export default function Homescreen({ navigation }) {
       >
         <Text style={styles.textstyle}>Go to UseState Color Changer</Text>
       </TouchableOpacity>
-    
+
       <TouchableOpacity
         style={styles.viewStyle}
         onPress={() => navigation.navigate("AddTask")}
@@ -55,9 +55,21 @@ export default function Homescreen({ navigation }) {
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.viewStyle}
-        onPress={() => navigation.navigate("search")}
+        onPress={() => navigation.navigate("Search City Data")}
       >
-        <Text style={styles.textstyle}>Go to Search Api </Text>
+        <Text style={styles.textstyle}>Search City Weather Data </Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.viewStyle}
+        onPress={() => navigation.navigate("Searching Test")}
+      >
+        <Text style={styles.textstyle}>Search City Weather Data </Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.viewStyle}
+        onPress={() => navigation.navigate("Information")}
+      >
+        <Text style={styles.textstyle}>Data information </Text>
       </TouchableOpacity>
     </View>
   );

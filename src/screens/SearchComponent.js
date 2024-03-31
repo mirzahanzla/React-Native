@@ -1,37 +1,35 @@
-import React, { useState } from "react";
-import { Text, View } from "react-native";
-import yelp from "../api/yelp";
-import SearchComponent from "./SearchComponent";
+import React from "react";
+import { TextInput, Button, View } from "react-native";
 
-export default function SearchScreen() {
-  const [term, setTerm] = useState("");
-  const [results, setResults] = useState([]);
+//Hanzla Mirza: SP21-BSE-057
 
-  const searchApi = async (searchTerm) => {
-    try {
-      const response = await yelp.get("/search", {
-        params: {
-          limit: 50,
-          term: searchTerm,
-          location: "NewYork", // You may want to make this dynamic
-        },
-      });
-      setResults(response.data.businesses);
-    } catch (error) {
-      console.error("Error fetching data: ", error);
-    }
-  };
-
+const SearchComponent = ({ term, onTermChange, onTermSubmit }) => {
   return (
-    <View>
-      <SearchComponent
-        term={term}
-        onTermChange={(newValue) => setTerm(newValue)}
-        onTermSubmit={() => searchApi(term)}
-        resultsCount={results.length} // Pass the count of results
+    <View
+      style={{ flexDirection: "row", marginHorizontal: 10, marginBottom: 10 }}
+    >
+      <TextInput
+        style={{
+          flex: 1,
+          borderColor: "gray",
+          borderWidth: 1,
+          borderRadius: 7,
+          paddingHorizontal: 10,
+        }}
+        placeholder="Enter city"
+        value={term}
+        onChangeText={onTermChange}
       />
-      <Text>{results.length} results found</Text>
-      {/* You can map through results here and display them accordingly */}
+      <View style={{ marginLeft: 10, borderRadius: 7, overflow: "hidden" }}>
+        <Button
+          title="Search"
+          onPress={onTermSubmit}
+          color="#007AFF" 
+       
+        />
+      </View>
     </View>
   );
-}
+};
+
+export default SearchComponent;

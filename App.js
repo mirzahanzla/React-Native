@@ -10,6 +10,9 @@ import SquareScreen from "./src/screens/ColorChanger";
 import UseStateChangeColor from "./src/screens/UseStateChangeColor";
 import AddListTask from "./src/screens/AddListTask";
 import SearchScreen from "./src/screens/SearchScreen";
+import QuizAssignment from "./src/screens/QuizAssignment"
+import Screeninformation from "./src/screens/ScreenInformation"
+import Profile from "./src/screens/Profile"
 
 
 const Stack = createNativeStackNavigator();
@@ -26,7 +29,10 @@ function App() {
         <Stack.Screen name="Changer" component={SquareScreen} />
         <Stack.Screen name="UseState" component={UseStateChangeColor} />
         <Stack.Screen name="AddTask" component={AddListTask} />
-        <Stack.Screen name="search" component={SearchScreen} />
+        <Stack.Screen name="Search City Data" component={SearchScreen} />
+        <Stack.Screen name="Searching Test" component={QuizAssignment} />
+        <Stack.Screen name="Information" component={Screeninformation} />
+        <Stack.Screen name="Profile" component={Profile} />
       </Stack.Navigator>
     </NavigationContainer>
   );
